@@ -8,7 +8,9 @@ Este repositorio contiene un sistema de gestión de incidentes que permite el se
 
 **Alumnos**
 - **Federico Lazarte**
-- **Resto del equipo aún sin podes lograr comunicarse, por el momento entreo solo el trabajo, por lo menos hasta que me contesten**
+- **Emilio Saliba
+- ** Agustin Salas
+
 
 # Diagrama de Entidad-Relación (DER)
 
