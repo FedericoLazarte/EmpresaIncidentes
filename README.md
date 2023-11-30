@@ -8,8 +8,8 @@ Este repositorio contiene un sistema de gestión de incidentes que permite el se
 
 **Alumnos**
 - **Federico Lazarte**
-- **Emilio Saliba
-- ** Agustin Salas
+- **Emilio Saliba**
+- **Agustin Salas**
 
 
 # Diagrama de Entidad-Relación (DER)
