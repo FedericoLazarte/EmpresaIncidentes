@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter @Setter
 public class Especialidad {
     private int idEspecialidad;
-    private String nombreEspecialidad;
-    private TipoProblema tipoProblema;
+    private String nombre;
+   private String descripcion;
 }
