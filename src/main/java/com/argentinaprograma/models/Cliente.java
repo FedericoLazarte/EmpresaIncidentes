@@ -22,17 +22,23 @@ public class Cliente implements Serializable {
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long idCliente;
+
     @Column(name = "razon_social")
     private String razonSocial;
+
     @Column(name = "cuit")
     private String cuit;
+
     @Column(name = "numero_celular")
     private String numeroCelular;
+
     @Column(name = "servicios_contratados")
     private List<Servicio> serviciosContratados;
+
     @Column(name = "servicio_mensaje")
     private ServicioMensaje servicioMensaje;
-    @Column(name = "notificaciones")
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<NotificacionMensaje> notificaciones;
 
     public void agregarServicio(Servicio servicios){}

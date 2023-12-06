@@ -15,8 +15,10 @@ public class Especialidad implements Serializable {
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long idEspecialidad;
+
     @Column(name = "nombre", nullable = false)
     private String nombre;
+
     @Column(name = "descripcion", nullable = false)
    private String descripcion;
 }
