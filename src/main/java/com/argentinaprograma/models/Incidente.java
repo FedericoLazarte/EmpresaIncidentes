@@ -32,8 +32,11 @@ public class Incidente implements Serializable {
     @Column(name = "fecha_resolucion", nullable = false)
     private LocalDate fechaResolucion;
 
+    @OneToMany(mappedBy = "incidente", cascade = CascadeType.ALL)
     private List<Problema> problemas;
 
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "id_tecnico_asignado", nullable = false)
     private Tecnico tecnicoAsignado;
 
     private Servicio servicioReportado;
