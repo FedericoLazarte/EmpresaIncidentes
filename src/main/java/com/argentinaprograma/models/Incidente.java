@@ -1,15 +1,16 @@
 package com.argentinaprograma.models;
 
 import com.argentinaprograma.estado.Estado;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
 
-@Getter @Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Incidente implements Serializable {
     private int idIncidente;
     private String descripcion;

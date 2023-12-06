@@ -1,8 +1,7 @@
 package com.argentinaprograma.models;
 
 import com.argentinaprograma.adapter.ServicioMensaje;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -10,7 +9,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
-@Getter @Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Tecnico implements Serializable {
     private int idTecnico;
     private String nombre;

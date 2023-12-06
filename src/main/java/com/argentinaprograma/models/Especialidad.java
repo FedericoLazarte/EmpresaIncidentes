@@ -1,13 +1,22 @@
 package com.argentinaprograma.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
-@Getter @Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "especialidad")
 public class Especialidad implements Serializable {
-    private int idEspecialidad;
+    @Id
+    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long idEspecialidad;
+    @Column(name = "nombre", nullable = false)
     private String nombre;
+    @Column(name = "descripcion", nullable = false)
    private String descripcion;
 }

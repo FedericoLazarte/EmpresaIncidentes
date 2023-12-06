@@ -21,7 +21,7 @@ public class Cliente implements Serializable {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int idCliente;
+    private Long idCliente;
     @Column(name = "razon_social")
     private String razonSocial;
     @Column(name = "cuit")

@@ -1,12 +1,13 @@
 package com.argentinaprograma.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.List;
 
-@Getter @Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Servicio implements Serializable {
     private int idServicio;
     private String nombreServicio;
