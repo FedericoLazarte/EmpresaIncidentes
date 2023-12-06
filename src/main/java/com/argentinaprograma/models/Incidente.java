@@ -4,12 +4,13 @@ import com.argentinaprograma.estado.Estado;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
 
 @Getter @Setter
-public class Incidente {
+public class Incidente implements Serializable {
     private int idIncidente;
     private String descripcion;
     private Estado estado;

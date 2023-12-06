@@ -1,4 +1,4 @@
-package com.argentinaprograma.mensaje;
+package com.argentinaprograma.adapter;
 
 import com.argentinaprograma.models.NotificacionMensaje;
 

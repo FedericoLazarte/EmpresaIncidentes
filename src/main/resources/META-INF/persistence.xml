@@ -13,14 +13,16 @@
         <class>com.argentinaprograma.models.Problema</class>
         <class>com.argentinaprograma.models.Servicio</class>
         <class>com.argentinaprograma.models.Tecnico</class>
-        <class>com.argentinaprograma.models.TimepoResolucionProblema</class>
+        <class>com.argentinaprograma.models.TiempoResolucionProblema</class>
         <class>com.argentinaprograma.models.TipoProblema</class>
+        <class>com.argentinaprograma.models.NotificacionMensaje</class>
+        <class>com.argentinaprograma.models.Incidente</class>
 
         <properties>
             <!-- Propiedades de configuración de Hibernate -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/incidente?characterEncoding=utf8"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/incidente?useSSL=false"/>
             <property name="hibernate.connection.username" value="root"/>
             <property name="hibernate.connection.password" value="fede37863085"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

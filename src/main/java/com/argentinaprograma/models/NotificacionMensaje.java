@@ -1,6 +1,8 @@
 package com.argentinaprograma.models;
 
-public class NotificacionMensaje {
+import java.io.Serializable;
+
+public class NotificacionMensaje implements Serializable {
     private String titulo;
     private String campoMensaje;
     private Incidente incidente;

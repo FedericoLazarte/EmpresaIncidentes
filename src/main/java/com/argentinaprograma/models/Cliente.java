@@ -1,19 +1,38 @@
 package com.argentinaprograma.models;
 
-import com.argentinaprograma.mensaje.ServicioMensaje;
-import lombok.Getter;
-import lombok.Setter;
+import com.argentinaprograma.adapter.ServicioMensaje;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter @Setter
-public class Cliente {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "cliente")
+public class Cliente implements Serializable {
+    @Id
+    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int idCliente;
+    @Column(name = "razon_social")
     private String razonSocial;
+    @Column(name = "cuit")
     private String cuit;
+    @Column(name = "numero_celular")
     private String numeroCelular;
+    @Column(name = "servicios_contratados")
     private List<Servicio> serviciosContratados;
+    @Column(name = "servicio_mensaje")
     private ServicioMensaje servicioMensaje;
+    @Column(name = "notificaciones")
     private List<NotificacionMensaje> notificaciones;
 
     public void agregarServicio(Servicio servicios){}
@@ -24,4 +43,9 @@ public class Cliente {
         List<Incidente> ejemplo = new ArrayList<>();
         return ejemplo;
     }
+
+    public void setRazonSocial(String nombre) {
+        this.razonSocial = nombre;
+    }
+
 }

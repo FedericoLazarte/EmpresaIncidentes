@@ -1,6 +1,8 @@
 package com.argentinaprograma.models;
 
-public class TimepoResolucionProblema {
+import java.io.Serializable;
+
+public class TiempoResolucionProblema implements Serializable {
     private TipoProblema tipoDeProblema;
     private int tiempoEstimado;
 }
