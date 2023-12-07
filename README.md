@@ -32,8 +32,9 @@ Este repositorio contiene un sistema de gestión de incidentes que permite el se
 
 # Estructura de las clases de Java
 
+![diagramaFinalArgP](https://github.com/FedericoLazarte/EmpresaIncidentes/assets/97749958/ea760d10-adc6-43ab-9f72-a61395a05656)
 
-![DiagramaArgPrograma](https://github.com/FedericoLazarte/EmpresaIncidentes/assets/97749958/26fe5663-9b4d-49f7-b0d0-d7779cd8a027)
+
 
 ## Clases Principales:
 1. **Cliente**: Representa los datos de los clientes y métodos para gestionar incidentes.
