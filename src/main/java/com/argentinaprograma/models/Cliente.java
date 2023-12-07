@@ -68,6 +68,15 @@ public class Cliente implements Serializable {
         }
     }
 
+    public void enviarNotificacion() {
+        for(NotificacionMensaje nm : this.notificaciones) {
+            if(!nm.isNotificiacionEnviada()) {
+                this.canalComunicacion.enviarNotificacion(nm, this.numeroCelular);
+                nm.setNotificiacionEnviada(true);
+            }
+        }
+    }
+
     private boolean agregarServicio(Servicio servicio) {
         if (!serviciosContratados.contains(servicio)) {
             serviciosContratados.add(servicio);

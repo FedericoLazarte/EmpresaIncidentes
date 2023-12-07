@@ -27,4 +27,7 @@ public class NotificacionMensaje implements Serializable {
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 
+    @Column(name = "notificacion_enviada")
+    private boolean notificiacionEnviada;
+
 }

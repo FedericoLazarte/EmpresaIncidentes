@@ -30,13 +30,6 @@ public class Problema implements Serializable {
     @JoinColumn(name = "id_tipo_problema")
     private TipoProblema tipoProblema;
 
-/*    @Column(name = "tiempo_resolucion", nullable = false)
-    private LocalDate tiempoEstimadoResolucion;
 
-    @Column(name = "horas_extras", nullable = false)
-    private int horasExtras;
-
-    @Column(name = "fecha_resolucion", nullable = false)
-    private LocalDate fechaDeResolucion; */
 
 }
