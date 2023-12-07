@@ -37,6 +37,27 @@ public class Servicio implements Serializable {
         return agregarProblemaSiNoExiste(problema);
     }
 
+    public boolean agregarCliente(Cliente cliente) {
+        if (cliente == null) {
+            throw new IllegalArgumentException("El cliente no puede ser nulo");
+        }
+
+        return agregarClienteSiNoExiste(cliente);
+    }   
+
+    private boolean agregarClienteSiNoExiste(Cliente cliente) {
+        if (!contieneCliente(cliente)) {
+            this.clientes.add(cliente);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean contieneCliente(Cliente cliente) {
+        return this.clientes.contains(cliente);
+    }
+
+
     private boolean agregarProblemaSiNoExiste(Problema problema) {
         if (!contieneProblema(problema)) {
             this.problemas.add(problema);
@@ -49,5 +70,7 @@ public class Servicio implements Serializable {
     private boolean contieneProblema(Problema problema) {
         return this.problemas.contains(problema);
     }
+
+
 
 }

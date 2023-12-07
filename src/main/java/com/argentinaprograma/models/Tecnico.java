@@ -43,6 +43,47 @@ public class Tecnico implements Serializable {
     @OneToMany(mappedBy = "tecnicoAsignado")
     private List<Incidente> incidentesAsignados;
 
+     public boolean agregarEspecialidad(Especialidad especialidad) {
+        if (especialidad == null) {
+            throw new IllegalArgumentException("La especialidad no puede ser nula");
+        }
+
+        return agregarEspecialidadSiNoExiste(especialidad);
+    }
+
+    private boolean agregarEspecialidadSiNoExiste(Especialidad especialidad) {
+        if (!contieneEspecialidad(especialidad)) {
+            this.especialidades.add(especialidad);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean contieneEspecialidad(Especialidad especialidad) {
+        return this.especialidades.contains(especialidad);
+    }
+
+    public boolean agregarIncidente(Incidente incidente) {
+        if (incidente == null) {
+            throw new IllegalArgumentException("El incidente no puede ser nulo");
+        }
+
+        return agregarIncidenteSiNoExiste(incidente);
+    }
+
+    private boolean agregarIncidenteSiNoExiste(Incidente incidente) {
+        if (!contieneIncidente(incidente)) {
+            this.incidentesAsignados.add(incidente);
+            incidente.setTecnicoAsignado(this);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean contieneIncidente(Incidente incidente) {
+        return this.incidentesAsignados.contains(incidente);
+    }
+
 
 
 }

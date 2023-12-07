@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
+import java.time.Duration;
 
 
 @Data
@@ -56,6 +57,15 @@ public class Incidente implements Serializable {
         }
 
         return agregarProblemaSiNoExiste(problema);
+    }
+
+    public long calcularHorasTranscurridas() {
+        if (fechaResolucion == null) {
+            throw new IllegalStateException("El incidente no ha sido resuelto");
+        }
+
+        Duration duracion = Duration.between(fechaCreacion.atStartOfDay(), fechaResolucion.atStartOfDay());
+        return duracion.toHours();
     }
 
     private boolean agregarProblemaSiNoExiste(Problema problema) {
