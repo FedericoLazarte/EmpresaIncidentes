@@ -3,6 +3,6 @@ package com.argentinaprograma.adapter;
 
 import com.argentinaprograma.models.NotificacionMensaje;
 
-public interface ServicioMensaje {
+public interface CanalComunicacion {
     void enviarNotificacion(NotificacionMensaje mensaje, String numeroCel);
 }

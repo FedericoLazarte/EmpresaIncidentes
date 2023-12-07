@@ -2,7 +2,7 @@ package com.argentinaprograma.adapter;
 
 import com.argentinaprograma.models.NotificacionMensaje;
 
-public class RemitenteWhatsApp implements ServicioMensaje{
+public class RemitenteWhatsApp implements CanalComunicacion {
     AdapterRemitenteWhatsApp adapter;
 
 

@@ -14,22 +14,29 @@ import java.time.LocalDate;
 @Table(name = "problema")
 public class Problema implements Serializable {
     @Id
-    @Column(name="id")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name="id_problema")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long idProblema;
 
+    @ManyToOne
+    @JoinColumn(name = "id_incidente")
+    private Incidente incidente;
 
+    @ManyToOne
+    @JoinColumn(name = "id_servicio")
     private Servicio servicio;
 
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_problema")
     private TipoProblema tipoProblema;
 
-    @Column(name = "tiempo_resolucion", nullable = false)
+/*    @Column(name = "tiempo_resolucion", nullable = false)
     private LocalDate tiempoEstimadoResolucion;
 
     @Column(name = "horas_extras", nullable = false)
     private int horasExtras;
 
     @Column(name = "fecha_resolucion", nullable = false)
-    private LocalDate fechaDeResolucion;
+    private LocalDate fechaDeResolucion; */
 
 }

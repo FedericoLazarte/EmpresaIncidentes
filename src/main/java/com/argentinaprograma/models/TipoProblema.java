@@ -12,8 +12,8 @@ import java.util.List;
 @Table(name = "tipo_problema")
 public class TipoProblema implements Serializable {
     @Id
-    @Column(name="id")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name="id_tipo_problema")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long idTipoProblema;
 
     @Column(name = "nombre", nullable = false)

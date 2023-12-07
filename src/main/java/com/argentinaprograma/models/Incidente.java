@@ -17,13 +17,12 @@ import java.util.List;
 public class Incidente implements Serializable {
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long idIncidente;
 
-    @Column(name = "descripcion", nullable = false)
-    private String descripcion;
 
-    @Column(name = "estado", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_estado")
     private Estado estado;
 
     @Column(name = "fecha_creacion",nullable = false)
@@ -32,24 +31,46 @@ public class Incidente implements Serializable {
     @Column(name = "fecha_resolucion", nullable = false)
     private LocalDate fechaResolucion;
 
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+
     @OneToMany(mappedBy = "incidente", cascade = CascadeType.ALL)
     private List<Problema> problemas;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinColumn(name = "id_tecnico_asignado", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "id_tecnico_asignado")
     private Tecnico tecnicoAsignado;
 
-    private Servicio servicioReportado;
-
-    @Column(name = "incidente_cerrado", nullable = false)
-    private boolean incideteCerrado;
 
     @Column(name = "complejo", nullable = false)
-    private boolean esUnIndicenteComplejo;
+    private boolean esComplejo;
+
+    @Column(name = "incidente_cerrado")
+    private boolean incidenteCerrado;
 
 
-    public void agregarProblema(Problema problema){}
+    public boolean agregarProblema(Problema problema) {
+        if (problema == null) {
+            throw new IllegalArgumentException("El problema no puede ser nulo");
+        }
 
-    public void notificarTecnico(NotificacionMensaje mensaje){}
+        return agregarProblemaSiNoExiste(problema);
+    }
+
+    private boolean agregarProblemaSiNoExiste(Problema problema) {
+        if (!contieneProblema(problema)) {
+            this.problemas.add(problema);
+            problema.setIncidente(this);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean contieneProblema(Problema problema) {
+        return this.problemas.contains(problema);
+    }
+
+
 
 }

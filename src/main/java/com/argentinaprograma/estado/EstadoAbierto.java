@@ -2,6 +2,11 @@ package com.argentinaprograma.estado;
 
 import com.argentinaprograma.models.Incidente;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "estado_abierto")
 public class EstadoAbierto extends Estado {
 
     @Override

@@ -10,7 +10,8 @@ public class ConfiguracioBD {
         if(factory == null)
             factory = Persistence.createEntityManagerFactory("JPA_PU");
 
-        return factory.createEntityManager();
+        EntityManager manager = factory.createEntityManager();
+        return manager;
 
     }
 }

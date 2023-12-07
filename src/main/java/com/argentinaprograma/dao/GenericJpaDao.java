@@ -6,6 +6,8 @@ import javax.persistence.EntityTransaction;
 import java.io.Serializable;
 import java.util.List;
 
+import  com.argentinaprograma.Main;
+
 public abstract class GenericJpaDao<T extends Serializable> {
     private Class<T> clase;
 

@@ -23,7 +23,8 @@ public class NotificacionMensaje implements Serializable {
     @Column(name ="campo_mensaje")
     private String campoMensaje;
 
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
 
-    private Incidente incidente;
-    private boolean enviado;
 }

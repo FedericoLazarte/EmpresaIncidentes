@@ -1,7 +1,6 @@
 package com.argentinaprograma.service;
 
 import com.argentinaprograma.dao.TiempoResolucionProblemDAO;
-import com.argentinaprograma.models.TiempoResolucionProblema;
 
 import java.util.List;
 

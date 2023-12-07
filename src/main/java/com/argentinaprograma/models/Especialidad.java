@@ -12,8 +12,8 @@ import java.io.Serializable;
 @Table(name = "especialidad")
 public class Especialidad implements Serializable {
     @Id
-    @Column(name="id")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="id_especialidad")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long idEspecialidad;
 
     @Column(name = "nombre", nullable = false)

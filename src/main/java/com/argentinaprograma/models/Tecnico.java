@@ -1,6 +1,5 @@
 package com.argentinaprograma.models;
 
-import com.argentinaprograma.adapter.ServicioMensaje;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,8 +16,8 @@ import java.util.Set;
 @Table(name = "tecnico")
 public class Tecnico implements Serializable {
     @Id
-    @Column(name="id")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name="id_tecnico")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long idTecnico;
 
     @Column(name = "nombre", nullable = false)
@@ -30,15 +29,20 @@ public class Tecnico implements Serializable {
     @Column(name = "fecha_nacimiento", nullable = false)
     private LocalDate fechaDeNacimiento;
 
+    @ManyToMany
+    @JoinTable(
+        name = "tecnico_especialidad",
+        joinColumns = @JoinColumn(name = "id_tenico"),
+        inverseJoinColumns = @JoinColumn(name = "id_especialidad")
+    )
     private Set<Especialidad> especialidades;
 
     @Column(name = "disponibilidad", nullable = false)
     private boolean estaDisponible;
 
-    private List<NotificacionMensaje> notificaciones;
+    @OneToMany(mappedBy = "tecnicoAsignado")
+    private List<Incidente> incidentesAsignados;
 
-    private ServicioMensaje medioNotificacionPreferido;
 
-    private List<TiempoResolucionProblema> tiempoEstimadoDeResolucion;
 
 }
