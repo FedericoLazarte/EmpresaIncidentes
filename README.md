@@ -14,7 +14,10 @@ Este repositorio contiene un sistema de gestión de incidentes que permite el se
 
 # Diagrama de Entidad-Relación (DER)
 
-![Diagrama en blanco](https://github.com/FedericoLazarte/EmpresaIncidentes/assets/97749958/6cd637fe-a520-4177-83ce-6c52f517705a)
+
+
+
+![baseDeDatosArgPrograma](https://github.com/FedericoLazarte/EmpresaIncidentes/assets/97749958/e6e9fd20-2321-4aa3-bda3-168962306d96)
 
 
 ## Entidades Principales
